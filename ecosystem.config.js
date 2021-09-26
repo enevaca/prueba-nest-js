@@ -24,10 +24,10 @@ module.exports = {
       ref: 'origin/main',
       path: '/home/noel/app/development/prueba-nest-js',
       // 'pre-deploy-local': 'echo pre-deploy-local',
-      'pre-setup': 'ls -la',
-      // 'post-setup': 'echo "post-setup"',
+      'pre-setup': 'pwd && ls -la',
+      'post-setup': 'npm install',
       'pre-deploy': 'git fetch --all',
-      'post-deploy': 'npm install -d && npm run build'
+      'post-deploy': 'npm install -d'
       //  'npm install -d && npm run build && pm2 reload ecosystem.config.js --env development',
       // 'post-deploy': 'pm2 startOrRestart ecosystem.config.js --env development',
     },
