@@ -1,0 +1,40 @@
+[
+  {
+    "resultsPath": "src/tasks",
+    "pluralizeNames": true,
+    "noConfigs": true,
+    "convertCaseFile": "pascal",
+    "convertCaseEntity": "pascal",
+    "convertCaseProperty": "camel",
+    "convertEol": "LF",
+    "propertyVisibility": "none",
+    "lazy": true,
+    "activeRecord": true,
+    "generateConstructor": true,
+    "customNamingStrategyPath": "",
+    "relationIds": false,
+    "strictMode": "none",
+    "skipSchema": false,
+    "indexFile": false,
+    "exportType": "named"
+  },
+  {
+    "host": "localhost",
+    "port": 3306,
+    "databaseNames": [
+      "prueba"
+    ],
+    "user": "root",
+    "password": "123456",
+    "databaseType": "mysql",
+    "schemaNames": [
+      ""
+    ],
+    "instanceName": "localhost",
+    "ssl": false,
+    "skipTables": [],
+    "onlyTables": [
+      "tareas"
+    ]
+  }
+]
