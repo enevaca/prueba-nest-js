@@ -22,12 +22,12 @@ module.exports = {
       host: ['192.168.1.20'],
       repo: 'git@github.com:enevaca/prueba-nest-js.git',
       ref: 'origin/main',
-      path: '/home/noel/app/development/prueba-nest-js',
+      path: '/home/noel/app/development',
       // 'pre-deploy-local': 'echo pre-deploy-local',
       'pre-setup': 'pwd && ls -la',
-      'post-setup': 'npm install',
-      'pre-deploy': 'git fetch --all',
-      'post-deploy': 'npm install -d'
+      'post-setup': 'pwd',
+      'pre-deploy': 'git fetch --all && pwd',
+      'post-deploy': 'pwd && npm install -d'
       //  'npm install -d && npm run build && pm2 reload ecosystem.config.js --env development',
       // 'post-deploy': 'pm2 startOrRestart ecosystem.config.js --env development',
     },
