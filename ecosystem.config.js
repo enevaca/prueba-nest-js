@@ -18,7 +18,7 @@ module.exports = {
   ],
   deploy: {
     development: {
-      user: 'enevaca',
+      user: 'noel',
       host: ['192.168.1.20'],
       repo: 'git@github.com:enevaca/prueba-nest-js.git',
       ref: 'origin/main',
@@ -36,7 +36,7 @@ module.exports = {
       path: '/var/www/production',
       'pre-deploy': 'git fetch --all',
       'post-deploy':
-        'npm install -d && npm run build:production && pm2 reload ecosystem.config.js --env production',
+        'npm install -d && npm run build && pm2 reload ecosystem.config.js --env production',
       'pre-setup':
         'npm install -d && npm run build:production && pm2 reload ecosystem.config.js --env production',
     },
