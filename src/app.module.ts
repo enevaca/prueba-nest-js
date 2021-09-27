@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BooksModule } from './books/infraestructure/books.module';
-import { configService } from './config/config.service';
+//import { configService } from './config/config.service';
 //import { WinstonModule } from 'nest-winston';
 //import winston from 'winston';
 //import path from 'path';

@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'demo_nestjs',
-      script: './main.js',
+      script: 'main.js',
       autorestart: true,
       watch: true,
       max_memory_restart: '256M',
@@ -23,7 +23,7 @@ module.exports = {
       repo: 'git@github.com:enevaca/prueba-nest-js.git',
       ref: 'origin/main',
       path: '/home/noel/app/development',
-      'pre-deploy-local': 'echo pre-deploy-local',
+      // 'pre-deploy-local': 'echo pre-deploy-local',
       'pre-setup': 'pwd && ls -la',
       'pre-deploy':
         'pwd && git fetch --all && npm install && npm run build && cp ormconfig.json dist/ && cp package.json dist/ && cp ecosystem.config.js dist/ && ls -la',

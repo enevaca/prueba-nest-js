@@ -58,13 +58,49 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Deploy Manual NestJS
+
+```bash
+# En el servidor:
+# Instalar NVM y NodeJS https://github.com/nvm-sh/nvm
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+$ source ~/.bashrc
+
+$ nvm install --lts
+
+$ npm install -g pm2
+
+# Generar para producción: 
+$ npm run build
+
+# Archivo de configuración de TypeORM
+$ cp ormconfig.json dist/
+
+# Archivo package.json de NodeJS
+$ cp package.json dist/
+
+# Archivo de configuración de PM2
+$ cp ecosystem.config.js dist/
+
+$ scp -r dist/* usuario_pc@IP:/home/usuario_pc/app/development/
+
+# En el servidor:
+# Copiar todo el contenido del directorio dist al servidor dentro de app
+$ npm i --prod
+
+$ node app/main.js
+
+$ pm2 start ecosystem.config.js --env development
+
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
 
