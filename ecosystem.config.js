@@ -26,9 +26,9 @@ module.exports = {
       // 'pre-deploy-local': 'echo pre-deploy-local',
       'pre-setup': 'pwd && ls -la',
       'post-setup': 'pwd',
-      'pre-deploy': 'git fetch --all && pwd',
+      'pre-deploy': 'pwd && git fetch --all && npm install && npm run build && cp ormconfig.json dist/ && cp package.json dist/ && cp ecosystem.config.js dist/',
       'post-deploy':
-        'pwd && npm install -d && npm run build && pm2 reload ecosystem.config.js --env development',
+        'cd dist && pwd && npm install --prod && pm2 reload ecosystem.config.js --env development',
       // 'post-deploy': 'pm2 startOrRestart ecosystem.config.js --env development',
     },
     production: {
