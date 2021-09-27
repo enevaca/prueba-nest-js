@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'demo_nestjs',
-      script: 'dist/main.js',
+      script: 'main.js',
       autorestart: true,
       watch: true,
       max_memory_restart: '256M',
@@ -26,7 +26,7 @@ module.exports = {
       // 'pre-deploy-local': 'echo pre-deploy-local',
       'pre-setup': 'pwd && ls -la',
       'post-setup': 'pwd',
-      'pre-deploy': 'pwd && git fetch --all && npm install && npm run build && cp ormconfig.json dist/ && cp package.json dist/ && cp ecosystem.config.js dist/',
+      'pre-deploy': 'pwd && git fetch --all && npm install && npm run build && cp ormconfig.json dist/ && cp package.json dist/ && cp ecosystem.config.js dist/ && ls -la',
       'post-deploy':
         'cd dist && pwd && npm install --prod && pm2 reload ecosystem.config.js --env development',
       // 'post-deploy': 'pm2 startOrRestart ecosystem.config.js --env development',
