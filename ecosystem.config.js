@@ -8,11 +8,11 @@ module.exports = {
       max_memory_restart: '256M',
       env_development: {
         PORT: 3000,
-        // NODE_ENV: 'development',
+        NODE_ENV: 'development',
       },
       env_production: {
         PORT: 3001,
-        // NODE_ENV: 'production',
+        NODE_ENV: 'production',
       },
     },
   ],
@@ -27,14 +27,14 @@ module.exports = {
       'pre-setup': 'pwd && ls -la',
       'post-setup': 'pwd',
       'pre-deploy': 'git fetch --all && pwd',
-      'post-deploy': 'pwd && npm install -d'
-      //  'npm install -d && npm run build && pm2 reload ecosystem.config.js --env development',
+      'post-deploy':
+        'pwd && npm install -d && npm run build && pm2 reload ecosystem.config.js --env development',
       // 'post-deploy': 'pm2 startOrRestart ecosystem.config.js --env development',
     },
     production: {
       user: 'ubuntu',
-      host: ['192.168.0.13', '192.168.0.14', '192.168.0.15'],
-      ref: 'origin/master',
+      host: ['192.168.1.20'],
+      ref: 'origin/main',
       repo: 'git@github.com:Username/repository.git',
       path: '/var/www/production',
       'pre-deploy': 'git fetch --all',
